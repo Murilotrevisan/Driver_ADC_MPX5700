@@ -33,7 +33,7 @@ float MPX5700_get_pressure(MPX5700_t mpx) {
 	const float V_in = (4095/ (V_Source) ) * Bit_Value.value;
 
 	/* Converte a tensão de entrada do microcontrolador para a tensão de saida do sensor */
-	const float V_out = (V_Source / V_Sensor) * V_in;
+	const float V_out = (V_Sensor / V_Source) * V_in;
 
 	/* Converte tensão de saida do sensor para pressão medida (datasheet) */
 	const float Pressure = (( Vout / Vs) - MPX_CONV_SUM) / MPX_CONV_MUL;
